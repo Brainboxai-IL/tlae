@@ -32,17 +32,33 @@ A static checklist gives all three the same answer. This skill doesn't.
 
 ## Install
 
-```bash
-# Clone into your Claude Code skills directory
-cd ~/.claude/skills
-git clone https://github.com/Brainboxai-IL/tlae
+**One command:**
 
-# Or into a single project
-mkdir -p .claude/skills && cd .claude/skills
-git clone https://github.com/Brainboxai-IL/tlae
+```bash
+npx @brainboxai/tlae
 ```
 
-That's it. The next time you open a repo in Claude Code, it'll run onboarding.
+That's it. Installs the skill to `~/.claude/skills/tlae`.
+
+### Other targets
+
+```bash
+npx @brainboxai/tlae --cursor    # Install for Cursor (current project)
+npx @brainboxai/tlae --codex     # Install for Codex CLI
+npx @brainboxai/tlae --gemini    # Install for Gemini CLI
+npx @brainboxai/tlae --aider     # Install for Aider
+npx @brainboxai/tlae --project   # Install only for current project
+npx @brainboxai/tlae --all       # Install for everything
+npx @brainboxai/tlae --help      # See all options
+```
+
+### Manual install (alternative)
+
+```bash
+git clone https://github.com/Brainboxai-IL/tlae ~/.claude/skills/tlae
+```
+
+After installing, open Claude Code on any project and say `use tlae` to activate it.
 
 ---
 
