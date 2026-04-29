@@ -1,4 +1,4 @@
-# 🧠 TLAE — Tech Lead Agentic Engineering
+# 🧠 TLAE - Tech Lead Agentic Engineering
 
 [![npm version](https://img.shields.io/npm/v/@brainboxai/tlae.svg)](https://www.npmjs.com/package/@brainboxai/tlae)
 [![npm downloads](https://img.shields.io/npm/dm/@brainboxai/tlae.svg)](https://www.npmjs.com/package/@brainboxai/tlae)
