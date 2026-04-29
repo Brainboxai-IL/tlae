@@ -1,0 +1,25 @@
+# Local user data — never check in
+.tlae/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Editors
+.idea/
+.vscode/
+*.code-workspace
+
+# Node (in case examples grow)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
