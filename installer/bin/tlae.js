@@ -108,7 +108,7 @@ ${c.bold}${c.cyan}TLAE${c.reset} ${c.dim}v${VERSION}${c.reset}
 ${c.dim}Tech Lead Agentic Engineering — Claude Code skill installer${c.reset}
 
 ${c.bold}USAGE${c.reset}
-  npx tlae [options]
+  npx @brainboxai/tlae [options]
 
 ${c.bold}DEFAULT${c.reset}
   Without flags, installs to Claude Code globally (~/.claude/skills/tlae).
@@ -129,13 +129,13 @@ ${c.bold}OPTIONS${c.reset}
 
 ${c.bold}EXAMPLES${c.reset}
   ${c.dim}# install to Claude Code (most common):${c.reset}
-  npx tlae
+  npx @brainboxai/tlae
 
   ${c.dim}# install to Cursor for the current project:${c.reset}
-  npx tlae --cursor
+  npx @brainboxai/tlae --cursor
 
   ${c.dim}# install everywhere:${c.reset}
-  npx tlae --all
+  npx @brainboxai/tlae --all
 
 ${c.bold}LEARN MORE${c.reset}
   ${c.cyan}https://github.com/Brainboxai-IL/tlae${c.reset}

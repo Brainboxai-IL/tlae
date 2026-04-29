@@ -1,22 +1,38 @@
-# 🧠 TLAE - Tech Lead Agentic Engineering
+# 🧠 TLAE — Tech Lead Agentic Engineering
+
+[![npm version](https://img.shields.io/npm/v/@brainboxai/tlae.svg)](https://www.npmjs.com/package/@brainboxai/tlae)
+[![npm downloads](https://img.shields.io/npm/dm/@brainboxai/tlae.svg)](https://www.npmjs.com/package/@brainboxai/tlae)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **A Claude Code skill that adapts to your project. Not a generic checklist.**
 
-Most "AI engineering rules" are static text. They tell a junior dev and a staff engineer the same thing, regardless of stack, team size, or whether you're shipping to live customers or playing on localhost.
+---
 
-This skill is different. On first run it:
+## ⚡ Install (one command)
 
-1. **Detects your stack**: language, framework, package manager, tests, CI, deployment.
-2. **Asks 3 questions**: team size, domain, production state.
-3. **Writes a profile** to `.tlae/profile.md` and uses it from then on.
+```bash
+npx @brainboxai/tlae
+```
 
-Every workflow, risk gate, and validation command is then **scoped to that profile**.
+That's it. Open Claude Code on any project and say `use tlae`.
 
 ---
 
-## Why this exists
+## 🎯 What it does
 
-Same task, different worlds:
+Most "AI engineering rules" are static text. They tell a junior dev and a staff engineer the same thing, regardless of stack, team size, or whether you're shipping to live customers or playing on localhost.
+
+TLAE is different. On first run it:
+
+1. **Detects your stack** automatically (language, framework, package manager, tests, CI, deployment).
+2. **Asks 3 short questions** (team size, domain, production state).
+3. **Writes a profile** to `.tlae/profile.md` and uses it for every task from then on.
+
+Every workflow, risk gate, and validation command gets **scoped to that profile**.
+
+---
+
+## 🧪 Same task, different worlds
 
 > *"Add a `referrer_url` column to the `signups` table."*
 
@@ -26,52 +42,81 @@ Same task, different worlds:
 | Small team, B2B SaaS, live | **6/10** | Plan-first, approval, tests required |
 | Larger team, fintech, paying customers | **7/10** | **Stop.** Analysis-only until exact diff approved |
 
-A static checklist gives all three the same answer. This skill doesn't.
+A static checklist gives all three the same answer. TLAE doesn't.
 
 ---
 
-## Install
+## 📦 Installation options
 
-**One command:**
-
+### Default (Claude Code, global)
 ```bash
 npx @brainboxai/tlae
 ```
+Installs to `~/.claude/skills/tlae`. Available across all your Claude Code projects.
 
-That's it. Installs the skill to `~/.claude/skills/tlae`.
-
-### Other targets
-
+### Per-project (Claude Code)
 ```bash
-npx @brainboxai/tlae --cursor    # Install for Cursor (current project)
-npx @brainboxai/tlae --codex     # Install for Codex CLI
-npx @brainboxai/tlae --gemini    # Install for Gemini CLI
-npx @brainboxai/tlae --aider     # Install for Aider
-npx @brainboxai/tlae --project   # Install only for current project
-npx @brainboxai/tlae --all       # Install for everything
-npx @brainboxai/tlae --help      # See all options
+cd your-project
+npx @brainboxai/tlae --project
 ```
+Installs to `./.claude/skills/tlae`. Only for this project.
 
-### Manual install (alternative)
+### Other AI coding tools
 
+| Tool | Command |
+|---|---|
+| **Cursor** | `npx @brainboxai/tlae --cursor` |
+| **Codex CLI** | `npx @brainboxai/tlae --codex` |
+| **Gemini CLI** | `npx @brainboxai/tlae --gemini` |
+| **Aider** | `npx @brainboxai/tlae --aider` |
+| **Everything** | `npx @brainboxai/tlae --all` |
+
+### Manual install (no Node.js)
 ```bash
 git clone https://github.com/Brainboxai-IL/tlae ~/.claude/skills/tlae
 ```
 
-After installing, open Claude Code on any project and say `use tlae` to activate it.
+---
+
+## 🚀 First run — what to expect
+
+Open Claude Code on any project and say:
+
+> use tlae
+
+You'll see:
+
+```
+Detected: Next.js + Prisma + Vercel + pnpm.
+
+Before I touch your task, 3 short questions:
+
+1. Team size?
+   (a) Solo / side project
+   (b) Small team (2-5)
+   (c) Larger team (6+)
+```
+
+Answer each one (just type `a`, `b`, or `c`). After the third question:
+
+```
+Profile saved.
+Loaded: Next.js + Prisma + Vercel / small team / B2B SaaS / live-with-paying-customers
+```
+
+From now on, every task gets a real risk score and proper handling.
 
 ---
 
-## What you get
+## 🛡️ What you get
 
-### Auto-detection (first run)
-The onboarding script identifies:
-- Languages: JS / TS / Python / Rust / Go / Java / Ruby / PHP / Elixir / C# / Swift
-- Frameworks: Next.js / Nuxt / Vite / Remix / SvelteKit / Astro / Django / FastAPI / Flask / Rails / Spring / Tauri / ...
-- Package managers: pnpm / yarn / bun / npm / cargo / poetry / uv / pipenv / pip / bundler / composer / mix
-- Databases: Prisma / Drizzle / Supabase / Django ORM / Rails AR / sqlx / sea-orm / diesel
-- CI: GitHub Actions / GitLab CI / CircleCI
-- Deployment: Vercel / Netlify / Docker / Kubernetes / Fly / Railway
+### Auto-detection
+- **Languages**: JS / TS / Python / Rust / Go / Java / Ruby / PHP / Elixir / C# / Swift
+- **Frameworks**: Next.js, Nuxt, Vite, Remix, SvelteKit, Astro, Django, FastAPI, Flask, Rails, Spring Boot, Tauri, and more
+- **Package managers**: pnpm, yarn, bun, npm, cargo, poetry, uv, pipenv, pip, bundler, composer, mix
+- **Databases**: Prisma, Drizzle, Supabase, Django ORM, Rails AR, sqlx, sea-orm, diesel
+- **CI**: GitHub Actions, GitLab CI, CircleCI
+- **Deployment**: Vercel, Netlify, Docker, Kubernetes, Fly, Railway
 
 If your stack isn't listed, you'll get a clear message instead of a hallucinated guess.
 
@@ -91,8 +136,6 @@ Risk score: 5/10
 No more cryptic "Risk 3" labels.
 
 ### Stack-specific rules
-The skill loads the right rules for the right stack. Examples:
-
 - **Next.js**: flipping `"use client"` is Risk 2; `middleware.ts` is Risk 2+; auth routes are Risk 3+.
 - **Rust**: `unsafe` blocks are Risk 3 each; `unwrap()` outside tests is flagged.
 - **Django**: a model change without a migration is incomplete; renaming a column requires the three-step expand/contract.
@@ -112,7 +155,19 @@ Your project gets smarter every session.
 
 ---
 
-## Files
+## 🛠️ Updating the profile
+
+Your profile is just a markdown file at `.tlae/profile.md`. Edit it any time.
+
+To regenerate from scratch (re-detect stack and re-ask the 3 questions):
+```bash
+rm -rf .tlae
+npx @brainboxai/tlae --project --force
+```
+
+---
+
+## 📁 Repo structure
 
 ```
 SKILL.md                        Entry point + risk calculator
@@ -130,26 +185,14 @@ checklists/                     Reusable safety lists
 prompts/                        Standard prompts
 templates/                      Files to copy into the user's repo
 examples/                       Real session transcripts
+installer/                      Source of the npm installer
 ```
 
 ---
 
-## Manual override
+## 🤔 Why "agentic engineering"?
 
-Edit `.tlae/profile.md` any time. The skill re-reads it every session.
-
-To force re-detection, delete `.tlae/profile.md` and run:
-```bash
-sh scripts/onboard.sh
-# or on Windows
-pwsh scripts/onboard.ps1
-```
-
----
-
-## Why "agentic engineering"?
-
-Because in 2026 the bottleneck isn't writing code. It's making sure the AI doesn't ship the wrong code. This skill enforces the rules that real tech leads enforce on real teams:
+In 2026 the bottleneck isn't writing code. It's making sure the AI doesn't ship the wrong code. TLAE enforces the rules that real tech leads enforce on real teams:
 
 - Read before edit.
 - Plan before edit.
@@ -163,15 +206,19 @@ Same playbook, AI-native.
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Missing a stack? Drop a `stacks/<your-stack>.md` and open a PR.
 Missing a domain? Same with `domains/<your-domain>.md`.
 
-The skill is designed to grow.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
-## License
+## 📜 License
 
-MIT.
+MIT. See [LICENSE](LICENSE).
+
+---
+
+Built by [BrainboxAI](https://brainboxai.io) ⋅ [npm](https://www.npmjs.com/package/@brainboxai/tlae) ⋅ [Issues](https://github.com/Brainboxai-IL/tlae/issues)
