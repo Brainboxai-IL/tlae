@@ -1,0 +1,43 @@
+{
+  "name": "@brainboxai/tlae",
+  "version": "1.0.0",
+  "description": "TLAE - Tech Lead Agentic Engineering. One-command installer for the Claude Code skill.",
+  "bin": {
+    "tlae": "bin/tlae.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "claude-skill",
+    "ai-agent",
+    "agentic-engineering",
+    "tech-lead",
+    "code-review",
+    "cursor",
+    "codex",
+    "gemini-cli",
+    "skill-installer"
+  ],
+  "author": "Netanel Elyasi (BrainboxAI)",
+  "license": "MIT",
+  "homepage": "https://github.com/Brainboxai-IL/tlae",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brainboxai-IL/tlae.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Brainboxai-IL/tlae/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
