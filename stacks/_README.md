@@ -20,11 +20,11 @@ If a framework is detected as `unknown`, the language file (e.g. `python.md`, `r
 
 Every stack file should answer:
 
-1. **Default validation chain** — exact commands, in order
-2. **Files that are Risk 2+** — files where a small change has wide impact
-3. **Files that are Risk 3+** — files where a mistake is a real incident
-4. **Anti-patterns to refuse** — concrete patterns the agent should never execute without approval
-5. **Testing notes** — what conventions exist, what's flaky, what's preferred for new tests
+1. **Default validation chain** .  exact commands, in order
+2. **Files that are Risk 2+** .  files where a small change has wide impact
+3. **Files that are Risk 3+** .  files where a mistake is a real incident
+4. **Anti-patterns to refuse** .  concrete patterns the agent should never execute without approval
+5. **Testing notes** .  what conventions exist, what's flaky, what's preferred for new tests
 
 Optional but valuable:
 - **Performance gotchas**

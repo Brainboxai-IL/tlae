@@ -20,7 +20,7 @@ Loaded when `domain == b2b-saas`.
 
 - **Every query must filter by tenant** unless explicitly system-wide; refuse to write a query that omits it.
 - New columns/indexes on tenant-scoped tables must include `tenant_id` in the index when the query path uses it.
-- Background jobs operating across tenants must batch per-tenant, not iterate flat — for blast-radius containment.
+- Background jobs operating across tenants must batch per-tenant, not iterate flat .  for blast-radius containment.
 
 ## Plan limits / quotas
 
@@ -34,7 +34,7 @@ Loaded when `domain == b2b-saas`.
 
 ## Common anti-patterns
 
-- "I'll add the tenant filter later" — refuse.
-- Caching keyed without `tenant_id` — leak risk.
-- Soft-delete that doesn't filter in default queries — surfaces other tenants' data.
+- "I'll add the tenant filter later" .  refuse.
+- Caching keyed without `tenant_id` .  leak risk.
+- Soft-delete that doesn't filter in default queries .  surfaces other tenants' data.
 - Admin endpoints reachable without `is_admin` AND `tenant_id` checks.

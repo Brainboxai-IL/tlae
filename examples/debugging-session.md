@@ -29,7 +29,7 @@ A real transcript on a Node.js API project.
 > - The error implies `session` is undefined OR `session.user` is undefined.
 >
 > ## Likely root causes (ranked)
-> 1. **Most likely**: `/orders/list` allows guest users — a `requireAuth` bypass was added last week. `session` is undefined for guests, but `services/orders.ts` assumes it's always present.
+> 1. **Most likely**: `/orders/list` allows guest users .  a `requireAuth` bypass was added last week. `session` is undefined for guests, but `services/orders.ts` assumes it's always present.
 >    - Evidence to check: `git log` on the route file; presence of any `requireAuth: false` flag.
 > 2. **Possible**: race where session expires between auth middleware and the service call.
 >    - Evidence to check: time between request entry and the throw; any session-refresh logic.
@@ -44,10 +44,10 @@ A real transcript on a Node.js API project.
 > ## Minimal fix candidate (for hypothesis #1)
 > Make `services/orders.ts:listOrders` accept an optional session and branch:
 > - With session → return user's orders
-> - Without session → return 401 (or public-listing orders, depending on product intent — needs your call)
+> - Without session → return 401 (or public-listing orders, depending on product intent .  needs your call)
 >
 > ## What I will not touch
-> - The auth middleware. If the bug is there, that's Risk 4 — needs explicit approval.
+> - The auth middleware. If the bug is there, that's Risk 4 .  needs explicit approval.
 >
 > ## Validation
 > - Add a regression test: `listOrders` called without a session should not throw.

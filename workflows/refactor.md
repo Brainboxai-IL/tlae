@@ -7,7 +7,7 @@
 
 ### Definition
 
-A refactor changes **structure without changing externally visible behavior**. If a single test would notice the change, it's not a refactor — it's a feature change.
+A refactor changes **structure without changing externally visible behavior**. If a single test would notice the change, it's not a refactor .  it's a feature change.
 
 ### Pre-conditions
 

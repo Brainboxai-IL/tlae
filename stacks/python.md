@@ -11,20 +11,20 @@ Pick the chain based on what's installed; check `pyproject.toml` first.
 
 ## Package manager priority
 Detect which is in use; do not switch without approval:
-- `uv` (fastest, modern) — if `uv.lock` exists
-- `poetry` — if `poetry.lock` exists
-- `pipenv` — if `Pipfile.lock` exists
-- `pip` + `requirements.txt` — fallback
+- `uv` (fastest, modern) .  if `uv.lock` exists
+- `poetry` .  if `poetry.lock` exists
+- `pipenv` .  if `Pipfile.lock` exists
+- `pip` + `requirements.txt` .  fallback
 
 ## Files that are Risk 2+
-- `pyproject.toml`, `setup.cfg`, `setup.py` — build/install behavior
-- `manage.py` — Django entry
+- `pyproject.toml`, `setup.cfg`, `setup.py` .  build/install behavior
+- `manage.py` .  Django entry
 - Any `__init__.py` that re-exports a public API
-- `conftest.py` — affects all tests in a tree
+- `conftest.py` .  affects all tests in a tree
 
 ## Files that are Risk 3+
-- `migrations/` — never edit applied migrations; create new ones
-- `settings.py` (Django) or `config.py` — production config keys
+- `migrations/` .  never edit applied migrations; create new ones
+- `settings.py` (Django) or `config.py` .  production config keys
 - Any module that handles auth, sessions, JWTs, password hashing
 
 ## Common anti-patterns to refuse

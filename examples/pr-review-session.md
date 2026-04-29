@@ -27,7 +27,7 @@ A real transcript reviewing a 4-file PR on a B2B SaaS app.
 >
 > # PR Review
 >
-> ## Overall risk: **Critical** — do not merge.
+> ## Overall risk: **Critical** .  do not merge.
 >
 > ## 🚨 Blockers (must fix)
 >
@@ -49,7 +49,7 @@ A real transcript reviewing a 4-file PR on a B2B SaaS app.
 >
 > 7. GET doesn't paginate. Will time out on tenants with many users.
 >
-> 8. The migration filename uses today's date — fine if you're solo, but the team should have a migration numbering convention (sequence number) to avoid race conditions when two PRs land on the same day.
+> 8. The migration filename uses today's date .  fine if you're solo, but the team should have a migration numbering convention (sequence number) to avoid race conditions when two PRs land on the same day.
 >
 > ## Low
 >
@@ -70,7 +70,7 @@ A real transcript reviewing a 4-file PR on a B2B SaaS app.
 >
 > ---
 >
-> **My recommendation**: reject. The blockers are not fixable as drive-by review comments — they need a redesign of the auth model on these endpoints.
+> **My recommendation**: reject. The blockers are not fixable as drive-by review comments .  they need a redesign of the auth model on these endpoints.
 
 ---
 
@@ -78,5 +78,5 @@ A real transcript reviewing a 4-file PR on a B2B SaaS app.
 
 - Findings were **grouped by severity**, not just listed flat.
 - The reviewer named **the actual security vulnerabilities** with mechanism (tenant breach, privilege escalation), not vague concerns.
-- It refused to call this PR "almost ready with some nits" — it called it Critical and recommended rejection.
+- It refused to call this PR "almost ready with some nits" .  it called it Critical and recommended rejection.
 - It separated **questions for the author** from **issues**, so the author isn't defensive about the wrong things.

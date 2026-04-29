@@ -18,14 +18,14 @@ A real transcript during a production incident on a Stripe-integrated checkout.
 > ## Blast radius
 > All paying customers attempting checkout. Stripe webhooks may be in inconsistent state.
 >
-> ## Step 1 — Mitigation FIRST (before any code changes)
+> ## Step 1 .  Mitigation FIRST (before any code changes)
 >
 > What I need from you (1 minute):
 > 1. **Can we roll back the last deploy now?** That's the fastest path to recovery if the incident started 20 min after deploy.
 > 2. **Is there a feature flag wrapping the new behavior?** If yes, name it and I'll prepare a flip command.
 > 3. **What did the deploy change?** Last commit message or PR title is enough.
 >
-> ## Step 2 — Evidence I'll gather while you answer
+> ## Step 2 .  Evidence I'll gather while you answer
 > - Recent diff on `app/api/checkout/**` (read-only).
 > - Recent diff on `lib/stripe/**` (read-only).
 > - Stripe webhook handler (last 50 lines of changes).
@@ -49,17 +49,17 @@ A real transcript during a production incident on a Stripe-integrated checkout.
 > - 30% failure rate, ongoing revenue loss.
 > - A roll-forward fix to currency math without analysis is a bigger risk than the rollback.
 >
-> ## Recommended commands (you run these — I won't deploy)
+> ## Recommended commands (you run these .  I won't deploy)
 > 1. `git revert <last-deploy-sha>` (preserves history)
 > 2. Push to your prod branch.
 > 3. Confirm Stripe webhook handler version matches the rolled-back app version.
 >
-> ## After rollback — postmortem track
+> ## After rollback .  postmortem track
 >
 > While you roll back, I'll:
 > 1. Read the fee calculation code to understand what broke.
 > 2. Identify what test would have caught this (currency math without a property test? float drift? rounding edge case?).
-> 3. Write up a fix plan for review — not to implement.
+> 3. Write up a fix plan for review .  not to implement.
 >
 > ## Hypothesis (top of my list, to verify after rollback)
 > Fee math used floats somewhere it shouldn't, or rounded in the middle of a calculation. Common fintech footgun. Will confirm.
@@ -72,6 +72,6 @@ A real transcript during a production incident on a Stripe-integrated checkout.
 
 - **Mitigation before fix.** The agent did not propose code changes during the active incident.
 - **Refused to edit billing code** mid-incident even when asked.
-- **Asked about rollback availability** before doing anything else — the fastest path to recovery.
+- **Asked about rollback availability** before doing anything else .  the fastest path to recovery.
 - **Postmortem track started in parallel** so engineering effort isn't wasted while the rollback runs.
 - **No drama, no speculation about cause** until after recovery.

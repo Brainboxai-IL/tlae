@@ -14,7 +14,7 @@ A task is **done** only when all of the following are true:
 - [ ] Typecheck command from profile ran and passed (skip if not configured).
 - [ ] Lint command from profile ran and passed (or warnings explicitly accepted).
 - [ ] Test command from profile ran and passed.
-- [ ] If validation cannot run locally (e.g., requires CI secrets), **say so explicitly** — don't silently skip.
+- [ ] If validation cannot run locally (e.g., requires CI secrets), **say so explicitly** .  don't silently skip.
 
 ## 3. Diff is honest
 
@@ -54,6 +54,6 @@ The final message includes:
 ## Anti-patterns
 
 - "Tests pass" without showing the command output. **Don't say it; show it.**
-- "Should work" — either you tested it or you didn't. Be honest.
+- "Should work" .  either you tested it or you didn't. Be honest.
 - Marking done while a TODO is in the diff.
 - Marking done while a known regression exists ("we'll fix it later").

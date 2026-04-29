@@ -3,7 +3,7 @@
 > Use the dynamic [risk calculator](../workflows/risk-calculator.md) for any task at Risk 2+.
 > The classes below are the **base** scores. Modifiers are applied per profile.
 
-## Risk 0 — Read-only
+## Risk 0 .  Read-only
 
 Examples:
 - Explain code.
@@ -15,7 +15,7 @@ Examples:
 Allowed: read, search, summarize.
 Not allowed: edits.
 
-## Risk 1 — Safe local change
+## Risk 1 .  Safe local change
 
 Examples:
 - Copy / string change.
@@ -26,7 +26,7 @@ Examples:
 
 Required: brief plan in chat, diff summary, validation if available.
 
-## Risk 2 — Product behavior change
+## Risk 2 .  Product behavior change
 
 Examples:
 - New endpoint behavior.
@@ -37,7 +37,7 @@ Examples:
 
 Required: plan before edit, tests/validation, manual test steps.
 
-## Risk 3 — Sensitive system change
+## Risk 3 .  Sensitive system change
 
 Examples:
 - Auth, authorization, permissions.
@@ -50,7 +50,7 @@ Examples:
 
 Required: explicit approval before edits, risk analysis, rollback plan, tests.
 
-## Risk 4 — Dangerous change
+## Risk 4 .  Dangerous change
 
 Examples:
 - Secrets, env vars, key rotation.

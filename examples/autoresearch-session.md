@@ -89,7 +89,7 @@ First Load JS for /dashboard: 358 KB
 >
 > **Open follow-ups** (not done in this session):
 > - Migrate `lodash` → `lodash-es` (architectural change; needs ADR).
-> - Audit other heavy imports (the chart was the obvious one — others may need `bundle-analyzer`).
+> - Audit other heavy imports (the chart was the obvious one .  others may need `bundle-analyzer`).
 >
 > **Validation**: `pnpm build`, `pnpm typecheck`, `pnpm lint` all green.
 > **Risk score**: 2/10 (UI-only, reversible, no API change, no auth/billing).
@@ -98,8 +98,8 @@ First Load JS for /dashboard: 358 KB
 
 ## What this transcript shows
 
-- The setup happened **before** any change. Goal, metric, threshold, validation — all defined upfront.
+- The setup happened **before** any change. Goal, metric, threshold, validation .  all defined upfront.
 - One variable per experiment.
 - A 1.9% improvement was **honestly reverted** because the keep-rule said ≥ 5%. No silently keeping borderline wins.
-- The final summary distinguishes "kept" from "reverted" experiments — no fake claims.
+- The final summary distinguishes "kept" from "reverted" experiments .  no fake claims.
 - Follow-ups that would need a separate plan are noted, not silently bundled in.

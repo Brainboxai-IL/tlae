@@ -35,7 +35,7 @@ If the project's commands differ, the profile is the source of truth.
 ## Response Expectations
 After edits, report:
 - Files changed (with one-line "why" each).
-- Validation: command + actual output (not "tests pass" — show it).
+- Validation: command + actual output (not "tests pass" .  show it).
 - Risk score with breakdown.
 - Manual test steps the user can run.
 - Rollback path.

@@ -20,10 +20,10 @@ Tauri 2 replaced the v1 `allowlist` with a **three-part system**:
 Files live under `src-tauri/capabilities/*.json`. Always inspect these before changing any IPC or filesystem behavior.
 
 ## Files that are Risk 2+
-- `src-tauri/tauri.conf.json` — window config, CSP, identifier
-- `src-tauri/Cargo.toml` — Rust deps (impacts binary size + security surface)
-- Files defining `#[tauri::command]` — IPC boundary; treat like a public API
-- `src-tauri/capabilities/*.json` — what the frontend is allowed to invoke
+- `src-tauri/tauri.conf.json` .  window config, CSP, identifier
+- `src-tauri/Cargo.toml` .  Rust deps (impacts binary size + security surface)
+- Files defining `#[tauri::command]` .  IPC boundary; treat like a public API
+- `src-tauri/capabilities/*.json` .  what the frontend is allowed to invoke
 
 ## Files that are Risk 3+
 - Anything under `tauri.conf.json > app > security` (CSP, dangerous flags)
@@ -32,13 +32,13 @@ Files live under `src-tauri/capabilities/*.json`. Always inspect these before ch
 - Any `#[tauri::command]` that takes a path or shell argument
 
 ## Anti-patterns to refuse without approval
-- **`withGlobalTauri: true` in production** — convenience for dev; widens attack surface.
+- **`withGlobalTauri: true` in production** .  convenience for dev; widens attack surface.
 - **Disabling CSP** (`"csp": null`) instead of narrowing it. CSP is the last line of defense.
-- **Granting `fs:allow-write-text-file` without a `path` scope** — gives unrestricted write.
-- **Using `Command::new` from a command** without sanitizing the input — shell injection.
-- **Returning raw filesystem paths to the frontend** — path-traversal risk.
-- **Holding `std::sync::Mutex` across `.await` in async commands** — use `tokio::sync::Mutex`.
-- **`shell:allow-execute` with a wildcard** — frontend can run anything.
+- **Granting `fs:allow-write-text-file` without a `path` scope** .  gives unrestricted write.
+- **Using `Command::new` from a command** without sanitizing the input .  shell injection.
+- **Returning raw filesystem paths to the frontend** .  path-traversal risk.
+- **Holding `std::sync::Mutex` across `.await` in async commands** .  use `tokio::sync::Mutex`.
+- **`shell:allow-execute` with a wildcard** .  frontend can run anything.
 
 ## CSP rules (from official Tauri 2 docs)
 
@@ -53,7 +53,7 @@ A reasonable starting CSP for a Tauri app:
 }
 ```
 
-Do NOT add `'unsafe-eval'` to `script-src` without explicit approval — it defeats most XSS protection.
+Do NOT add `'unsafe-eval'` to `script-src` without explicit approval .  it defeats most XSS protection.
 
 ## Frontend ↔ Backend boundary
 
@@ -73,7 +73,7 @@ A change to a `#[tauri::command]` signature is **Risk 2** because both sides dep
 ## Distribution
 
 - macOS code signing: required for distribution; flag any change to signing config as Risk 3.
-- Updater: `tauri.conf.json > plugins > updater > endpoints` is Risk 3+ (controls how the app receives updates — supply chain risk).
+- Updater: `tauri.conf.json > plugins > updater > endpoints` is Risk 3+ (controls how the app receives updates .  supply chain risk).
 
 ## Mobile (iOS / Android)
 

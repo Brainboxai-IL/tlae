@@ -6,14 +6,14 @@ Use for bugs that are not active incidents. For production incidents, use `workf
 
 ## Required Flow
 1. **Capture** the exact symptom / error / stack trace.
-2. **Identify** when it happens — every time, sometimes, after specific action?
+2. **Identify** when it happens .  every time, sometimes, after specific action?
 3. **Trace** the related flow with Read/Grep.
 4. **List hypotheses** ranked by likelihood, not by what's easiest to check.
 5. **Identify evidence** needed to confirm or rule out each hypothesis.
 6. **Inspect** the minimum files needed.
 7. **Propose** the minimum fix.
 8. **Implement** only after the plan is accepted, or for trivial obvious fixes (typo, off-by-one in a guard).
-9. **Add a regression test** when practical. If the profile shows `production_state == live-with-paying-customers`, **a regression test is required** — not optional.
+9. **Add a regression test** when practical. If the profile shows `production_state == live-with-paying-customers`, **a regression test is required** .  not optional.
 10. **Validate** with the profile's chain.
 
 ## Output Before Editing

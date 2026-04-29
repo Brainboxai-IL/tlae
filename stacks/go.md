@@ -9,15 +9,15 @@ Loaded when `go` is in `languages`.
 4. `go build ./...` for any package change
 
 ## Files that are Risk 2+
-- `go.mod`, `go.sum` — dependency contract
-- `internal/` package boundaries — Go enforces these
+- `go.mod`, `go.sum` .  dependency contract
+- `internal/` package boundaries .  Go enforces these
 - Public exported names (capitalized symbols)
 - `main.go` for binaries
 
 ## Files that are Risk 3+
 - Anything under `pkg/auth`, `pkg/security`, or named handlers for sensitive routes
 - Background goroutines lacking shutdown signals
-- Channel close logic — easy to introduce panics
+- Channel close logic .  easy to introduce panics
 
 ## Anti-patterns to refuse
 - Naked `for { ... }` without a select on `ctx.Done()` in production code.

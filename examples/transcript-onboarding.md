@@ -91,14 +91,14 @@ Detected:
 >
 > **Do you approve this plan? Reply `yes` to proceed, or tell me what to change.**
 
-**User:** *"yes, but skip step 4 — we don't have a test setup yet"*
+**User:** *"yes, but skip step 4 .  we don't have a test setup yet"*
 
 **Claude:**
 > Acknowledged. Proceeding without tests.
 >
 > ⚠️ Note: skipping tests on a Risk 9 task in production raises the score to **10/10**. I'm logging this in `.tlae/LESSONS.md` so we remember to backfill a test in the next sprint.
 
-*(executes steps 1, 2, 3, 5 — runs `pnpm typecheck` and `pnpm lint` afterwards — reports diff summary with files changed and validation results)*
+*(executes steps 1, 2, 3, 5 .  runs `pnpm typecheck` and `pnpm lint` afterwards .  reports diff summary with files changed and validation results)*
 
 ---
 

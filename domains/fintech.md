@@ -4,7 +4,7 @@ Loaded when `domain == fintech`. **Most restrictive profile in this skill.**
 
 ## Auto risk modifiers
 
-These stack additively. If a single change touches money math AND state transitions, you add +2 AND +2 (= +4 above base). This is intentional — fintech compounding risk is real.
+These stack additively. If a single change touches money math AND state transitions, you add +2 AND +2 (= +4 above base). This is intentional .  fintech compounding risk is real.
 
 - Anything touching money math: **+2**
 - Anything touching transaction state machines (e.g. pending → settled → refunded): **+2**
@@ -14,7 +14,7 @@ These stack additively. If a single change touches money math AND state transiti
 
 Cap: a single task cannot exceed Risk 10. Anything calculated above 10 is treated as Risk 10 (analysis only, exact diff approval).
 
-## Hard stops (Risk 4 — analysis only, never edit without explicit approval)
+## Hard stops (Risk 4 .  analysis only, never edit without explicit approval)
 
 - Currency math (rounding, conversion, fees, FX rates).
 - Transaction state transitions (pending → settled → refunded).
@@ -49,12 +49,12 @@ Before any change that modifies transactional code:
 ## Testing
 
 - Property-based tests for money math (no float drift, no negative balances, sum invariants).
-- Integration tests against a sandbox of the payment provider — never mock signature verification.
+- Integration tests against a sandbox of the payment provider .  never mock signature verification.
 - Tests for both success and every documented failure mode.
 
 ## Specific anti-patterns
 
-- "Just adjusting the precision a tiny bit" — refuse.
-- Catching `DecimalException` and falling back to floats — refuse.
-- Comparing money with `==` after arithmetic — use a tolerance only at display.
-- Storing card numbers, even partially, anywhere outside the PCI-scoped vault — refuse.
+- "Just adjusting the precision a tiny bit" .  refuse.
+- Catching `DecimalException` and falling back to floats .  refuse.
+- Comparing money with `==` after arithmetic .  use a tolerance only at display.
+- Storing card numbers, even partially, anywhere outside the PCI-scoped vault .  refuse.

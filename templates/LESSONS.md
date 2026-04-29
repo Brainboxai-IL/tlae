@@ -8,7 +8,7 @@
 After a task that surfaced a non-obvious pattern, append a dated entry:
 
 ```md
-## YYYY-MM-DD — short title
+## YYYY-MM-DD .  short title
 - **Context**: what task / what file
 - **Surprise**: what was non-obvious
 - **Rule**: the durable lesson, written as an instruction to future-you

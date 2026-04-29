@@ -11,7 +11,7 @@ Bullet list of the actual changes, grouped by area.
 
 ## Risk score
 N/10 with one-line breakdown.
-Example: `5/10 — base 3 (public API change) + 2 (live with paying customers) + 1 (no tests) - 1 (reversible / feature-flagged)`
+Example: `5/10 .  base 3 (public API change) + 2 (live with paying customers) + 1 (no tests) - 1 (reversible / feature-flagged)`
 
 See `workflows/risk-calculator.md` for the formula.
 

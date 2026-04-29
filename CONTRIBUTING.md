@@ -27,7 +27,7 @@ Workflows describe how to **operate** on a task type. If you've used the skill o
 
 ### 4. Expand `examples/`
 
-Real transcripts are gold. Anonymize details, keep the shape, contribute. The current examples cover 5 task types — there's room for more (architecture decisions, mobile-specific, ML training).
+Real transcripts are gold. Anonymize details, keep the shape, contribute. The current examples cover 5 task types .  there's room for more (architecture decisions, mobile-specific, ML training).
 
 ### 5. Improve detection in `scripts/onboard.sh` / `onboard.ps1`
 
@@ -44,7 +44,7 @@ If the script misidentifies your stack, fix it. Test on at least 2 representativ
 
 - AI-generated boilerplate (we can tell).
 - Sweeping rewrites without concrete motivation.
-- Adding workflows that overlap heavily with existing ones — extend an existing one or write a delta-only file (see `workflows/refactor.md` as an example).
+- Adding workflows that overlap heavily with existing ones .  extend an existing one or write a delta-only file (see `workflows/refactor.md` as an example).
 
 ## Pull request process
 
@@ -55,4 +55,4 @@ If the script misidentifies your stack, fix it. Test on at least 2 representativ
 
 ## Code of conduct
 
-Be direct. Be specific. Be respectful. We're all here to ship better software faster — feedback is the point.
+Be direct. Be specific. Be respectful. We're all here to ship better software faster .  feedback is the point.

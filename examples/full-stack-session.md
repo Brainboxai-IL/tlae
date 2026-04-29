@@ -45,7 +45,7 @@ A real transcript on a Next.js + Supabase project.
 > - `app/(auth)/login/page.tsx` (3-line diff)
 >
 > ## Files I will NOT touch
-> - The `signIn` server action (auth-adjacent — Risk 3+).
+> - The `signIn` server action (auth-adjacent .  Risk 3+).
 > - `components/ui/Button.tsx` (out of scope).
 >
 > ## Validation
@@ -81,7 +81,7 @@ A real transcript on a Next.js + Supabase project.
 
 - Risk was computed with a clear breakdown, not just a label.
 - Plan came before edits.
-- Inspection was scoped — Claude didn't read the whole repo.
+- Inspection was scoped .  Claude didn't read the whole repo.
 - Auth-adjacent code was explicitly excluded.
 - Validation output was shown, not just claimed.
 - Rollback path was stated.

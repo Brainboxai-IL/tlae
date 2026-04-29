@@ -7,9 +7,9 @@ Loaded when `domain == internal-oss`.
 The blast radius is small or contained. Optimize for **speed and clarity**, not formality.
 
 ### Relaxed
-- ADR templates — optional.
-- Multi-step approval — only for destructive ops.
-- "Tests required at Risk 2+" — replaced by "tests required at Risk 3+".
+- ADR templates .  optional.
+- Multi-step approval .  only for destructive ops.
+- "Tests required at Risk 2+" .  replaced by "tests required at Risk 3+".
 
 ### Kept
 - Read-before-edit (saves time in any codebase).
@@ -19,7 +19,7 @@ The blast radius is small or contained. Optimize for **speed and clarity**, not 
 ## OSS-specific
 
 If the project is public:
-- **Public API surface is sacred** — any breaking change requires a deprecation cycle or a major version bump.
+- **Public API surface is sacred** .  any breaking change requires a deprecation cycle or a major version bump.
 - Issue / PR templates and contribution docs are part of the contract.
 - Releases need a changelog entry; don't ship without one.
 

@@ -20,8 +20,8 @@ Loaded when `domain == healthcare`. Treat as fintech-equivalent strictness.
 
 ## PHI hygiene
 
-- **No PHI in logs** — refuse to add a log line that includes a body or untrusted fields. Log IDs only; ferry PHI through dedicated audit channels.
-- **No PHI in URLs** (path or query) — they leak to access logs and analytics.
+- **No PHI in logs** .  refuse to add a log line that includes a body or untrusted fields. Log IDs only; ferry PHI through dedicated audit channels.
+- **No PHI in URLs** (path or query) .  they leak to access logs and analytics.
 - **No PHI in error messages** returned to clients.
 - **No PHI in telemetry / Sentry / Datadog** unless the SDK has a documented redaction policy and tests for it.
 
@@ -37,6 +37,6 @@ Loaded when `domain == healthcare`. Treat as fintech-equivalent strictness.
 
 ## Common anti-patterns
 
-- "Temporary debug log of the full request" — refuse.
+- "Temporary debug log of the full request" .  refuse.
 - Caching responses that contain PHI in a CDN/edge.
 - Sharing a single error tracking instance across covered and non-covered code paths.

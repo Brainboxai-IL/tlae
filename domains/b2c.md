@@ -11,9 +11,9 @@ Loaded when `domain == b2c`.
 
 ## Hard stops (Risk 3+)
 
-- Active A/B tests — don't change the code path without coordinating with whoever owns the experiment.
-- Push notification triggers — sending a "test" notification to production is a real incident.
-- Email templates — broken HTML lands in millions of inboxes.
+- Active A/B tests .  don't change the code path without coordinating with whoever owns the experiment.
+- Push notification triggers .  sending a "test" notification to production is a real incident.
+- Email templates .  broken HTML lands in millions of inboxes.
 
 ## Performance is a feature
 

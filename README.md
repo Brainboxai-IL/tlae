@@ -1,13 +1,13 @@
-# 🧠 TLAE — Tech Lead Agentic Engineering
+# 🧠 TLAE - Tech Lead Agentic Engineering
 
-> **A Claude Code skill that adapts to your project — not a generic checklist.**
+> **A Claude Code skill that adapts to your project. Not a generic checklist.**
 
 Most "AI engineering rules" are static text. They tell a junior dev and a staff engineer the same thing, regardless of stack, team size, or whether you're shipping to live customers or playing on localhost.
 
 This skill is different. On first run it:
 
-1. **Detects your stack** — language, framework, package manager, tests, CI, deployment.
-2. **Asks 3 questions** — team size, domain, production state.
+1. **Detects your stack**: language, framework, package manager, tests, CI, deployment.
+2. **Asks 3 questions**: team size, domain, production state.
 3. **Writes a profile** to `.tlae/profile.md` and uses it from then on.
 
 Every workflow, risk gate, and validation command is then **scoped to that profile**.
@@ -90,7 +90,7 @@ The skill loads the right rules for the right stack. Examples:
 
 ### Project-local memory (`LESSONS.md`)
 After each fix, the skill prompts:
-> *"This surprised me — should I add it to LESSONS.md?"*
+> *"This surprised me. Should I add it to LESSONS.md?"*
 
 Your project gets smarter every session.
 
@@ -102,7 +102,7 @@ Your project gets smarter every session.
 SKILL.md                        Entry point + risk calculator
 scripts/
   onboard.sh / onboard.ps1      Auto-detect + write profile
-  validate.sh                   Run typecheck → lint → test from profile
+  validate.sh                   Run typecheck, lint, test from profile
   detect_project.sh             Lightweight detection
   repo_snapshot.sh              Map a repo for the first time
   diff_summary.sh               Summarize a diff
@@ -122,25 +122,25 @@ examples/                       Real session transcripts
 
 Edit `.tlae/profile.md` any time. The skill re-reads it every session.
 
-To force re-detection:
+To force re-detection, delete `.tlae/profile.md` and run:
 ```bash
-sh scripts/onboard.sh --update
-# or
-pwsh scripts/onboard.ps1 -Update
+sh scripts/onboard.sh
+# or on Windows
+pwsh scripts/onboard.ps1
 ```
 
 ---
 
 ## Why "agentic engineering"?
 
-Because in 2026 the bottleneck isn't writing code — it's making sure the AI doesn't ship the wrong code. This skill enforces the rules that real tech leads enforce on real teams:
+Because in 2026 the bottleneck isn't writing code. It's making sure the AI doesn't ship the wrong code. This skill enforces the rules that real tech leads enforce on real teams:
 
 - Read before edit.
 - Plan before edit.
 - Confirm APIs exist before using them.
 - Smallest safe diff.
 - Tests at Risk 2+.
-- Stop at Risk 3+ for explicit approval.
+- Stop at Risk 7+ for explicit approval.
 - Record what you learned.
 
 Same playbook, AI-native.
@@ -149,7 +149,7 @@ Same playbook, AI-native.
 
 ## Contributing
 
-Missing a stack? Drop a `stacks/<your-stack>.md` and PR.
+Missing a stack? Drop a `stacks/<your-stack>.md` and open a PR.
 Missing a domain? Same with `domains/<your-domain>.md`.
 
 The skill is designed to grow.

@@ -18,7 +18,7 @@ score = base + sum(modifiers)
 | Public API change / behavior change | 3 |
 | Auth / billing / schema / secrets / infra | 4 |
 
-### Modifiers (apply each independently; do NOT add a "touches auth/billing/schema" modifier — that's already in the base score)
+### Modifiers (apply each independently; do NOT add a "touches auth/billing/schema" modifier .  that's already in the base score)
 
 | Condition | Delta |
 |---|---|
@@ -56,7 +56,7 @@ Always show the breakdown, not just the number.
 
 > ```
 > Risk score: 5/10
->   base: 3 (public API change — adds a new query param to /v1/orders)
+>   base: 3 (public API change .  adds a new query param to /v1/orders)
 >   +2: touches order state machine
 >   +1: no test covers the new branch
 >   -1: change is reversible (feature-flagged)

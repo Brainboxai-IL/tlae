@@ -11,11 +11,11 @@ Loaded automatically when `framework == nextjs` in profile.
 4. `{{pm}} run build` for any change touching middleware, routes, layouts, RSC components, or cache directives
 
 ## Files that are Risk 2+
-- `middleware.ts` — runs on every request
-- `app/layout.tsx`, any `(*)/layout.tsx` — affects all child routes
-- `next.config.{js,mjs,ts}` — build behavior, headers, redirects, experimental flags
-- `app/api/**/*.ts` — public API surface
-- `instrumentation.ts` — runtime instrumentation
+- `middleware.ts` .  runs on every request
+- `app/layout.tsx`, any `(*)/layout.tsx` .  affects all child routes
+- `next.config.{js,mjs,ts}` .  build behavior, headers, redirects, experimental flags
+- `app/api/**/*.ts` .  public API surface
+- `instrumentation.ts` .  runtime instrumentation
 
 ## Files that are Risk 3+
 - Anything under `app/api/auth/**` or routes handling sessions
@@ -24,8 +24,8 @@ Loaded automatically when `framework == nextjs` in profile.
 - `vercel.json`, `.vercel/` (production deploy config)
 
 ## Common anti-patterns to refuse without approval
-- Adding `"use client"` to a server component "to make it work" — investigate the cause first; the boundary matters.
-- Calling `cookies()` / `headers()` from inside a cached function — breaks PPR/cache (see Next.js 16 rules below).
+- Adding `"use client"` to a server component "to make it work" .  investigate the cause first; the boundary matters.
+- Calling `cookies()` / `headers()` from inside a cached function .  breaks PPR/cache (see Next.js 16 rules below).
 - Importing `server-only` utilities into client components.
 - Wrapping route handlers in middleware logic that should live in the route itself.
 - Using `dangerouslySetInnerHTML` with user content without explicit sanitization.
@@ -36,8 +36,8 @@ If `next.config.js` has `cacheComponents: true` (or you're on v16+):
 
 - The legacy `export const revalidate` and `export const dynamic = 'force-dynamic'` route segment configs **no longer apply** the same way; the new model is **explicit `'use cache'` directive**.
 - `'use cache'` at function or component level marks it cacheable; `cacheLife()` and `cacheTag()` control TTL and invalidation.
-- `experimental.ppr` is **removed** — `cacheComponents` is the supported flag.
-- A change that adds/removes `'use cache'` is **Risk 2** — it changes data freshness contracts.
+- `experimental.ppr` is **removed** .  `cacheComponents` is the supported flag.
+- A change that adds/removes `'use cache'` is **Risk 2** .  it changes data freshness contracts.
 - Inside a cached function, do NOT call `cookies()`, `headers()`, `searchParams`, or any dynamic API. Pass them in as args instead.
 - Server Actions can pass through cached components only as **props**, not invoked inside them.
 
@@ -66,5 +66,5 @@ If the project is still on Next.js 14/15:
 
 ## Vercel-specific
 - If `deployment == vercel`:
-  - Migrations (Prisma, Drizzle, etc.) typically run as part of the build command — verify in `vercel.json` or `package.json > scripts.build`. If they do, a schema change auto-deploys without a separate step (this is fast, but also dangerous — flag it).
-  - Preview deployments share env vars with production by default unless explicitly scoped — verify env scope on any change.
+  - Migrations (Prisma, Drizzle, etc.) typically run as part of the build command .  verify in `vercel.json` or `package.json > scripts.build`. If they do, a schema change auto-deploys without a separate step (this is fast, but also dangerous .  flag it).
+  - Preview deployments share env vars with production by default unless explicitly scoped .  verify env scope on any change.
